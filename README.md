@@ -1,14 +1,14 @@
 # Introduction to Python 🐍
 Repository created in Datacamp curse of Introduction to Python.
 
-## 📝 Class notes:
+# 📝 Class notes:
 
-### Python Lists
+## Python Lists
 
 <details>
 <summary>Expandir</summary>
 
-#### Python Data Types:
+### Python Data Types:
 - float: real numbers
 - int: integer numbers
 - str: string, text
@@ -20,7 +20,7 @@ tall = True
 ```
 => Each variable represents single value
 
-#### Problems:
+### Problems:
 
 - Data Science: many data points are
 - Height of entire family
@@ -32,13 +32,11 @@ tall = True
   ```
 => It would be incovenient & counter-productive to create a new variable for each point collected
 
-#### Python List:
+### Python List:
 
 - ``` letters = [a, b, c] ```
 
 A list is a way to give a single name to a collection of values of any type and with differents types.
-
-</details>
 
 ### Subsetting Lists
 
@@ -102,7 +100,37 @@ x = ["a", "b", "c"]
 y = list(x)
 y = x[:]
 ```
+</details>
+</details>
 
+## Functions and Packages
 
+<details>
+<summary>Expandir</summary>
 
+### Methods:
+
+In Python, everything is an object, and each object has specific methods associated. Depending on the type of the object, list, string, float, whatever, the avaliable methods are different. 
+
+### Packages:
+
+Packages are like a directory of Python scripts where each scriptis a so-called module whose function is specify functions, methods and new Python types aimed at solving particular problems 
+
+#### Selective import:
+
+General imports, like ```import math```, make **all** functionality from the ```math``` package available to you. However, if you decide to only use a specific part of a package, you can always make your import more selective:
+```
+from math impor pi
+```
+</details>
+
+## Numpy
+
+<details>
+<summary>Expandir</summary>
+
+Numpy or Numeric Python is a Python package that, among others, provides a alternative to the regular python list: the Numpy array with this we can perform calculation solver entire arrays easily and fast.
+It's possible because Numpy assumes that whole values are of a single type. Hence just make sure to pay attention when use arrays or list because they have different behavior.
+
+</details>
 </details>
