@@ -132,5 +132,69 @@ from math impor pi
 Numpy or Numeric Python is a Python package that, among others, provides a alternative to the regular python list: the Numpy array with this we can perform calculation solver entire arrays easily and fast.
 It's possible because Numpy assumes that whole values are of a single type. Hence just make sure to pay attention when use arrays or list because they have different behavior.
 
+### 2D Numpy Arrays:
+
+Numpy was able to perform all calculations element-wise (i.e. element by element). For 2D numpy arrays this isn't any different! You can combine matrices with single numbers, with vectors, and with other matrices. Like this:
+```
+import numpy as np
+np_mat = np.array([[1, 2],
+                   [3, 4],
+                   [5, 6]])
+np_mat * 2
+np_mat + np.array([10, 10])
+np_mat + np_mat
+```
+
+<hr>
+
+### Numpy: Basic Statitics
+
+<details>
+<summary>Expandir</summary>
+
+#### Data analysis: 
+
+A typical first step in analysing data, is getting to know my data in the first place. For the Numpy arrays before, this is pretty easy, because it isn't a lot of data. However, as a data scientist, you will be processing thousands, if not millions, or billions of numbers.
+
+Let's consider that I am conducting a **City-wide survey** where I ask 5000 adults about their height and weight. I will end with a 2D numpy array, which I named np_city, that has 5000 rows, corresponding to 5000 people, and two columns, corresponding to the height and weight.
+
+```
+import numpy as np
+np_city = ... # Implementation left out
+np_city
+```
+
+<pre>
+array([[1.64, 71.78],
+       [1.37, 63.35],
+       [1.6 , 55.09],
+       ...,
+       [2.04, 74.85],
+       [2.04, 68.72],
+       [2.01, 73.57]])
+</pre>
+
+It's a massive quantity of data for a person generate insights by yourself. However, I could generate summarizing statistics about my data.
+Numpy assure speed to the analysis, because Numpy enforces a single data type in an array, it can drastically spped up the calculations.
+
+#### Generate data:
+
+It's possible simulated data with Numpy functions! I sampled two random distributions 5000 times to create the height and weight arrays, and then used column_stack to paste them together as two columns. Another awesome thing that Numpy can do! Another great tool to get some sense of your data is to visualize it.
+
+Arguments for ```np.random.normal()```
+- distribution mean
+- distribution standart deviation
+- number of samples
+
+```
+height = np.round(np.random.normal(1.75, 0.20, 5000), 2)
+weight = np.round(np.random.normal(60.32, 15, 5000), 2)
+np_city = np.column_stack((height, weight))
+
+```
+
 </details>
+
+</details>
+
 </details>
