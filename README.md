@@ -1,7 +1,10 @@
-# Introduction to Python 🐍
-Repository created in Datacamp curse of Introduction to Python.
+# Introduction to Python 🐍 and SQL
+Repository created in Datacamp curse of Introduction to Python and SQL.
 
-# 📝 Class notes:
+# 📝 Class notes - Python:
+
+<details>
+<summary>Expandir</summary>
 
 ## Python Lists
 
@@ -197,4 +200,107 @@ np_city = np.column_stack((height, weight))
 
 </details>
 
+</details>
+
+# 📝 Class notes - SQL:
+
+<details>
+<summary>Expandir</summary>
+
+## Selecting columns
+
+<details>
+<summary>Expandir</summary>
+
+SQL, which stands for _Structured Query Language_, is a language for interacting with data stored in something called a relational database.
+You can think of a relational database as a collection of tables. A table is just a set of rows and columns, like a spreadsheet, which represents exactly one type of entity. For example, a table might represent employees in a company or purchases made, but not both.
+Each row, or _record_, of a table contains information about a single entity. For example, in a table representing employees, each row represents a single person. Each column, or _field_, of a table contains a single attribute for all rows in the table. For example, in a table representing employees, we might have a column containing first and last names for all employees.
+
+### SELECTing single columns
+
+A _query_ is a request for data from a database table (or combination of tables). Querying is an essential skill for a data scientist, since the data you need for your analyses will often live in databases.
+The table of employees might look something like this:
+<pre>
+| id 	| name    	| age 	| nationality 	|
+|----	|---------	|-----	|-------------	|
+| 1  	| Jessica 	| 22  	| Ireland     	|
+| 2  	| Gabriel 	| 48  	| France      	|
+| 3  	| Laura   	| 36  	| USA         	|
+</pre>
+
+In SQL, you can select data from a table using a ```SELECT``` statement. For example, the following query selects the ```name``` column from the ```people``` table:
+```
+SELECT name 
+FROM people;
+```
+In this query, ```SELECT``` and ```FROM``` are called keywords. In SQL, keywords are not case-sensitive, which means you can write the same query as:
+```
+select name 
+from people;
+```
+That said, it's good practice to make SQL keywords uppercase to distinguish them from other parts of your query, like column and table names.
+It's also good practice to include a semicolon at the end of your query. This tells SQL where the end of your query is!
+<hr>
+
+### SELECTing multiple columns:
+
+To select multiple columns from a table, simply separate the column names with commas!
+For example, this query selects two columns, ```name``` and ```birthdate```, from the ```people``` table:
+```
+SELECT name, birthdate
+FROM people;
+```
+
+Sometimes, you may want to select all columns from a table. Typing out every column name would be a pain, so there's a handy shortcut:
+```
+SELECT *
+FROM people;
+```
+
+If you only want to return a certain number of results, you can use the LIMIT keyword to limit the number of rows returned:
+```
+SELECT *
+FROM people
+LIMIT 10;
+```
+<hr>
+
+### SELECT DISTINCT
+
+Often your results will include many duplicate values. If you want to select all the unique values from a column, you can use the ```DISTINCT``` keyword.
+
+This might be useful if, for example, you're interested in knowing which languages are represented in the ```films``` table:
+```
+SELECT DISTINCT language
+FROM films;
+```
+Remember, you can check out the data in the tables by clicking on the table name!
+
+<hr>
+
+### Learning to COUNT
+
+What if you want to count the number of employees in your employees table? The ```COUNT()``` function lets you do this by returning the number of rows in one or more columns.
+
+For example, this code gives the number of rows in the people table:
+```
+SELECT COUNT(*)
+FROM people;
+```
+
+As you've seen, ```COUNT(*)``` tells you how many rows are in a table. However, if you want to count the number of non-missing values in a particular column, you can call ```COUNT()``` on just that column.
+For example, to count the number of birth dates present in the ```people``` table:
+```
+SELECT COUNT(birthdate)
+FROM people;
+```
+It's also common to combine ```COUNT()``` with ```DISTINCT``` to count the number of _distinct_ values in a column.
+
+For example, this query counts the number of distinct birth dates contained in the ```people``` table:
+```
+SELECT COUNT(DISTINCT birthdate)
+FROM people;
+```
+
+</details>
 </details>
