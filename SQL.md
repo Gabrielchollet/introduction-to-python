@@ -1,8 +1,5 @@
 # 📝 Class notes - SQL:
 
-<details>
-<summary>Expandir</summary>
-
 ## Selecting columns
 
 <details>

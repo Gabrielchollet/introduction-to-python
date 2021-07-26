@@ -1,8 +1,5 @@
 # 📝 Class notes - Python:
 
-<details>
-<summary>Expandir</summary>
-
 ## Python Lists
 
 <details>
@@ -192,8 +189,6 @@ weight = np.round(np.random.normal(60.32, 15, 5000), 2)
 np_city = np.column_stack((height, weight))
 
 ```
-
-</details>
 
 </details>
 
