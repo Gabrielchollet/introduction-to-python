@@ -228,5 +228,48 @@ ORDER BY release_year DESC;
 
 ### Sorting multiple columns:
 
-`ORDER BY` can also be used to sort on multiple columns. It will sort by the first column
+`ORDER BY` can also be used to sort on multiple columns. It will sort by the first column specified, then sort by the next, then the next, and so on. For example,
+```
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate, name;
+``` 
+sorts on birth dates first (oldest to newest) and then sorts on the names in alphabetical order. **The order of columns is important!**
+<hr>
+
+### GROUP BY:
+
+Often you will need to aggregate results. For example, you might want to count the number of male and female employees in your company. Here, what you want is to group all the males together and count them, and group all the females together and count them. In SQL, `GROUP BY` allows you to group a result by one or more columns, like so:
+```
+SELECT sex, count(*) 
+FROM employees
+GROUP BY sex;
+```
+This might give, for example:
+
+|sex    |count|
+|-------|-----|
+|male   |15   |
+|female |19   | 
+
+Commonly, `GROUP BY` is used with _aggregate_ functions like `COUNT()` or `MAX()`. Note that `GROUP BY` always goes after the `FROM` clause!
+<hr>
+
+### HAVING a great time:
+In SQL, aggregate functions can't be used in `WHERE` clauses. For example, the following query is invalid:
+```
+SELECT release_year
+FROM films
+GROUP BY release_year
+WHERE COUNT(title) > 10;
+```
+This means that if you want to filter based on the result of an aggregate function, you need another way! That's where the `HAVING` clause comes in. For example,
+```
+SELECT release_year
+FROM films
+GROUP BY release_year
+HAVING COUNT(title) > 10;
+```
+shows only those years in which more than 10 films were released.
+
 </details>
