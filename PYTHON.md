@@ -203,6 +203,7 @@ countries = ["afghanistan", "albania", "algeria"]
 ...
 world = {"afghanistan":30.55, "albania":2.77, "algeria":39.21}
 ```
+These unique keys in a dictionary should be so-called **immutable objects** like strings, booleans, integers, and floats. Basically, the content of immutable objects cannot be changed after they are created.
 
 </details>
 
