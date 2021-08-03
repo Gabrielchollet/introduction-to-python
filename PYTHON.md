@@ -192,4 +192,18 @@ np_city = np.column_stack((height, weight))
 
 </details>
 
+## Dictionaries
+
+<details>
+<summary>Expandir</summary>
+
+```
+pop = [30.55, 2.77, 39.21]
+countries = ["afghanistan", "albania", "algeria"]
+...
+world = {"afghanistan":30.55, "albania":2.77, "algeria":39.21}
+```
+
+</details>
+
 </details>
